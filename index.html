@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mesto Russia</title>
+        <link rel="stylesheet" href="./pages/index.css">
+    </head>
+    <body class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/logo.svg" alt="Здесь написано Mesto Russia">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="./images/Жак.jpg" alt="Здесь изображен Жак-Ив Кусто">
+                <div class="profile__info">
+                    <div class="profile__title-button-wrapper">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button type="button" class="profile__edit-button"></button>
+                    </div>
+                    <p class="profile__subtitle">Исследователь океана</p>
+                </div>
+                <button type="button" class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+                <article class="element">
+                    <img class="element__image" src="./images/11.jpg" alt="Здесь изображен монастырь">
+                    <div class="element__group">
+                        <h3 class="element__title">Карачаевск</h3>
+                        <button type="button" class="element__like element__like_active"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__image" src="./images/22.jpg" alt="Здесь изображена пустыня">
+                    <div class="element__group">
+                        <h3 class="element__title">Гора Эльбрус</h3>
+                        <button type="button" class="element__like element__like_active"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__image" src="./images/33.jpg" alt="Здесь изображена гора">
+                    <div class="element__group">
+                        <h3 class="element__title">Домбай</h3>
+                        <button type="button" class="element__like element__like_active"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__image" src="./images/22.jpg" alt="Здесь изображена пустыня">
+                    <div class="element__group">
+                        <h3 class="element__title">Гора Эльбрус</h3>
+                        <button type="button" class="element__like element__like_active"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__image" src="./images/33.jpg" alt="Здесь изображена гора">
+                    <div class="element__group">
+                        <h3 class="element__title">Домбай</h3>
+                        <button type="button" class="element__like element__like_active"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__image" src="./images/11.jpg" alt="Здесь изображен монастырь">
+                    <div class="element__group">
+                        <h3 class="element__title">Карачаевo-Черкессия</h3>
+                        <button type="button" class="element__like element__like_active"></button>
+                    </div>
+                </article>
+            </section>
+            <section class="popup">
+                <div class="popup__container">
+                    <button class="popup__close"></button>
+                    <form class="popup__content" name="profileInfoModalForm">
+                        <h2 class="popup__title">Редактировать профиль</h2>
+                            <div class="input">
+                                <input type="text" class="input__text input__text_type_name">
+                                <input type="text" class="input__text input__text_type_job">
+                                <button type="submit" class="input__button-save">Сохранить</button>
+                            </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+        <script src="./scripts/index.js"></script>
+    </body>
+</html>

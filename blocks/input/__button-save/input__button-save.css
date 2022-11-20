@@ -1,0 +1,24 @@
+.input__button-save {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    background-color: black;
+    margin-top: 15px;
+    border-radius: 2px;
+    min-height: 50px;
+    padding: 0;
+}
+
+.input__button-save:hover {
+    opacity: .8;
+}
+
+@media screen and (max-width: 720px){
+    .input__button-save {
+        font-size: 14px;
+        line-height: 17px;
+        min-height: 46px;
+    }
+}
