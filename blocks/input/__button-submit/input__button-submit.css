@@ -1,24 +1,29 @@
-.input__button-save {
+.input__button-submit {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     color: #fff;
     background-color: black;
-    margin-top: 15px;
+    margin-top: 18px;
     border-radius: 2px;
     min-height: 50px;
     padding: 0;
+    width: 358px;
 }
 
-.input__button-save:hover {
+.input__button-submit:hover {
     opacity: .8;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 720px){
-    .input__button-save {
+    .input__button-submit {
         font-size: 14px;
         line-height: 17px;
         min-height: 46px;
+        width: 238px;
+        margin-top: 15px;
+        align-self: center;
     }
 }
