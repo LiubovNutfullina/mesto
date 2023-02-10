@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         main: path.resolve(__dirname, 'src', 'pages', 'index.js')
     },
+    devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: "[name].[contenthash].js",
@@ -15,6 +16,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: '/node_modules/'
+            },
             {
                 test: /\.css$/,
                 use: [ 
