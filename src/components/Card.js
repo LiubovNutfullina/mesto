@@ -1,14 +1,15 @@
-import { openPopup } from "../utils/utils.js";
-
-class Card {
-    constructor (name, link, templateSelector) {
+export default class Card {
+    constructor (name, link, templateSelector, handleCardClick) {
         this._name = name;
         this._link = link;
         this._templateSelector = templateSelector;
+        this._handleCardClick = handleCardClick;
     }
     
     generateCard() {
         this._newCard = this._getTemplate();
+        this._likeButton = this._newCard.querySelector('.element__like');
+        this._imageElement = this._newCard.querySelector('.element__image');
         this._inputData();
         this._setEventListeners();
 
@@ -31,41 +32,24 @@ class Card {
     }
 
     _likeCard() {
-        this._newCard.querySelector('.element__like').classList.toggle('element__like_active');
-    }
-
-    _openImagePopup() {
-        const popupImageElement = document.querySelector('.popup__image');
-        popupImageElement.setAttribute('src', this._link);
-        popupImageElement.setAttribute('alt', 'Здесь показано место ' + this._name);
-
-        const popupTitleImageElement = document.querySelector('.popup__title-image');
-        const titleElement = document.querySelector('.element__title');
-        popupTitleImageElement.textContent = titleElement.textContent;
-
-        const imagePopup = document.querySelector('.popup_image');
-        openPopup(imagePopup);
+        this._likeButton.classList.toggle('element__like_active');
     }
 
     _setEventListeners() {
         const trashElement = this._newCard.querySelector('.element__trash');
         trashElement.addEventListener('click', () => { this._deleteCard() });
 
-        const likeElement = this._newCard.querySelector('.element__like');
-        likeElement.addEventListener('click', () => { this._likeCard() });
+        this._likeButton.addEventListener('click', () => { this._likeCard() });
 
-        const imageElement = this._newCard.querySelector('.element__image');
-        imageElement.addEventListener('click', () => { this._openImagePopup() })
+        
+        this._imageElement.addEventListener('click', () => { this._handleCardClick() })
     }
 
     _inputData() {
         const titleElement = this._newCard.querySelector('.element__title');
         titleElement.textContent = this._name;
 
-        const imageElement = this._newCard.querySelector('.element__image');
-        imageElement.src = this._link;
-        imageElement.setAttribute('alt', 'Здесь показано место ' + this._name)
+        this._imageElement.src = this._link;
+        this._imageElement.setAttribute('alt', 'Здесь показано место ' + this._name)
     }
 }
-
-export { Card };
